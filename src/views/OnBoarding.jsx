@@ -1,7 +1,9 @@
 
 const OnBoarding = () => {
   return (
-    <div>OnBoarding</div>
+    <div>
+
+    </div>
   )
 }
 

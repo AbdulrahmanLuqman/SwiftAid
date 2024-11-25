@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import OnBoarding from "./views/OnBoarding";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -18,7 +20,12 @@ const App = () => {
   return (
     <>
       {
-        isLoading ? <div>Loading...</div> : <div>Page Loaded</div>
+        isLoading ? <div>Loading...</div> : 
+        <main>
+          <Routes>
+            <Route path="/" element={<OnBoarding />} />
+          </Routes>
+        </main>
       }
     </>
   )
