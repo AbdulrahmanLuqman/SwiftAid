@@ -1,31 +1,27 @@
 import { useState, useEffect } from "react";
 
-function App() {
-  const [isLoading, setIsLoading] = useState(true); // Initial state for loading
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
-    const handlePageLoad = () => {
-      setIsLoading(false); // Stop loading when the page has loaded
-    };
+  useEffect(()=> {
+    const handleIsLoading = ()=> {
+      setIsLoading(false)
+    }
 
-    // Attach the event listener
-    window.addEventListener("load", handlePageLoad);
+    window.addEventListener("load", handleIsLoading)
+    
 
-    // Cleanup the event listener
-    return () => {
-      window.removeEventListener("load", handlePageLoad);
-    };
-  }, []);
-
+    return ()=> {
+      window.removeEventListener("load", handleIsLoading)
+    }
+  }, [])
   return (
-    <div className="App">
-      {isLoading ? (
-        <div className="loading">Loading...</div> // Show while loading
-      ) : (
-        <div className="content">Page Loaded!</div> // Show after loading
-      )}
-    </div>
-  );
+    <>
+      {
+        isLoading ? <div>Loading...</div> : <div>Page Loaded</div>
+      }
+    </>
+  )
 }
 
-export default App;
+export default App
