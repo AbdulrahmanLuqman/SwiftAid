@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import OnBoardingPage from "../components/OnBoarding/OnBoardingPage";
+import Loading from "../components/OnBoarding/Loading";
 const OnBoarding = () => {
     const [isLoading, setIsLoading] = useState(true)
 
@@ -22,7 +24,13 @@ const OnBoarding = () => {
   return (
     <div>
         {
-             isLoading ? <div>Loading...</div> : <div>Page Loaded</div>
+             isLoading 
+             ? 
+             <div><Loading /></div> 
+             : 
+             <div>
+                <OnBoardingPage />
+             </div>
         }
     </div>
   )
